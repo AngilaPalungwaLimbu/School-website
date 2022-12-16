@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\FacultyController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SchoolController;
 use App\Http\Controllers\ProfileController;
@@ -34,4 +35,5 @@ require __DIR__.'/auth.php';
 
 Route::resource('/school', SchoolController::class);
 Route::resource('/post', PostController::class);
+Route::resource('/faculty', FacultyController::class);
 

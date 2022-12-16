@@ -28,6 +28,9 @@
               </ul>
             </li>
             <li class="dropdown">
+                <a href="/faculty" class="nav-link"><i data-feather="monitor"></i><span>Faculty</span></a>
+              </li>
+            <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>

@@ -1,6 +1,5 @@
 
 <x-app-layout>
-
     <div class="container">
         <div class="row">
             <div class="col-md-10">
