@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faculty;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -14,7 +16,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subjects=Subject::all();
+        return view("backend.subject.index",compact('subjects'));
     }
 
     /**
@@ -24,7 +27,9 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        $faculties=Faculty::all();
+        return view("backend.subject.create",compact('faculties'));
+
     }
 
     /**
@@ -35,7 +40,14 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $subject=new Subject();
+        $subject->code=$request->code;
+        $subject->name=$request->name;
+        $subject->syllabus=$request->syllabus;
+        $subject->faculty_id=$request->faculty_id;
+        $subject->save();
+        return redirect("/subject");
     }
 
     /**

@@ -11,7 +11,6 @@
                 </div>
                 <div class="card-body">
                     @if (!empty($faculties))
-                        @foreach ($faculties as $faculty)
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -19,26 +18,26 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            @foreach ($faculties as $faculty)
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $faculty->name }}</td>
+                                        <th>
+                                            <form action="/faculty/{{ $faculty->id }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <a href="/faculty/{{ $faculty->id }}/edit"
+                                                    class="btn badge bg-primary">Edit</a>
+                                                <button type="submit" class="btn badge bg-danger">Delete</button>
 
-                                <tr>
-                                    <td>{{ $faculty->name }}</td>
-                                    <th>
-                                        <form action="/faculty/{{ $faculty->id }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="/faculty/{{ $faculty->id }}/edit"
-                                                class="btn badge bg-primary">Edit</a>
-                                            <button type="submit" class="btn badge bg-danger">Delete</button>
+                                            </form>
 
-                                        </form>
+                                        </th>
+                                    </tr>
+                                </tbody>
 
-                                    </th>
-                                </tr>
-                            </tbody>
-
+                                @endforeach
                         </table>
-                        @endforeach
                     @endif
                 </div>
             </div>

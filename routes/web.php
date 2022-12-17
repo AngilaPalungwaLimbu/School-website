@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\FacultyController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SchoolController;
+use App\Http\Controllers\Backend\SubjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,5 @@ require __DIR__.'/auth.php';
 Route::resource('/school', SchoolController::class);
 Route::resource('/post', PostController::class);
 Route::resource('/faculty', FacultyController::class);
+Route::resource('/subject', SubjectController::class);
 

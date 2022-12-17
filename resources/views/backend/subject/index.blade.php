@@ -9,22 +9,34 @@
                 </div>
                 <div class="card-body">
                     @if (!empty($subjects))
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
                         @foreach ($subjects as $subject)
-                            <div class="container mb-2">
-                                <div class="col-md-8 px-0">
-                                    <p>{{ $subject->title }}</p>
-                                    <img src="{{ asset($subject->image) }}" class="img-fluid" alt="Responsive image">
-                                    <p>{!! $subject->text !!}</p>
-                                    <form action="/subject/{{ $subject->id }}" method="subject">
-                                        @csrf
-                                        @method('delete')
-                                        <a href="/subject/{{ $subject->id }}/edit" class="badge btn bg-success">Edit</a>
-                                        <button type="submit" class="badge btn bg-danger">Delete</button>
-                                    </form>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
+                            <tbody>
+                                <tr>
+                                    <td>{{ $subject->name }}</td>
+                                    <th>
+                                        <form action="/subject/{{ $subject->id }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="/subject/{{ $subject->id }}/edit"
+                                                class="btn badge bg-primary">Edit</a>
+                                            <button type="submit" class="btn badge bg-danger">Delete</button>
+
+                                        </form>
+
+                                    </th>
+                                </tr>
+                            </tbody>
+
+                            @endforeach
+                    </table>
+                @endif
                 </div>
             </div>
         </div>
