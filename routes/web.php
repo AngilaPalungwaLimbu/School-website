@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backend\BedController;
 use App\Http\Controllers\Backend\FacultyController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Backend\RoomController;
 use App\Http\Controllers\Backend\SchoolController;
 use App\Http\Controllers\Backend\SubjectController;
 use App\Http\Controllers\ProfileController;
@@ -38,4 +40,6 @@ Route::resource('/school', SchoolController::class);
 Route::resource('/post', PostController::class);
 Route::resource('/faculty', FacultyController::class);
 Route::resource('/subject', SubjectController::class);
+Route::resource('/bed', BedController::class);
+Route::resource('/room', RoomController::class);
 

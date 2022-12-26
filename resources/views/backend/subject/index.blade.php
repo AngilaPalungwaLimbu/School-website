@@ -13,6 +13,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Facultu</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -20,6 +21,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $subject->name }}</td>
+                                    <td>{{ $subject->faculty->name }}</td>
                                     <th>
                                         <form action="/subject/{{ $subject->id }}" method="post">
                                             @csrf
